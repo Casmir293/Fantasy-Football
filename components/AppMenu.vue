@@ -2,6 +2,7 @@
 import useFetchData from "~/services/api";
 const { operators, fetchOperators } = useFetchData();
 
+const emit = defineEmits(["playersSelected"]);
 const selectedTestOperator = ref<string | null>(null);
 const selectedOperatorId = ref<string | null>(null);
 
@@ -10,6 +11,10 @@ const selectedOperatorPlayers = computed(() => {
     (op) => op._id === selectedOperatorId.value,
   );
   return selectedOperator ? selectedOperator.dfsSlatePlayers : [];
+});
+
+watch(selectedOperatorPlayers, (newPlayers) => {
+  emit("playersSelected", newPlayers);
 });
 
 watch(selectedTestOperator, (newValue) => {
