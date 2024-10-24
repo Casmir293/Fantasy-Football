@@ -1,75 +1,51 @@
-# Nuxt Minimal Starter
+# Fantasy-Football
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a simple demonstration task with Nuxt, Vuetify, TypeScript, and Tailwind.
 
-## Setup
+## Project Setup
 
-Make sure to install dependencies:
+- Clone the Repository:
 
-```bash
-# npm
+```sh
+git clone https://github.com/Casmir293/Fantasy-Football
+```
+
+```sh
+cd Fantasy-Football
+```
+
+- Install Dependencies:
+
+```sh
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+- Install Mock Server:
 
-Start the development server on `http://localhost:3000`:
+```sh
+npm install -g http-server
+```
 
-```bash
-# npm
+- Run the Mock server on the Database Folder:
+
+```sh
+http-server ./database --cors
+```
+
+- Run the App:
+
+```sh
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Note
 
-Build the application for production:
+Remember to update the BASE_URL on line four (4) of the database/api.ts directory to your mock up server URL.
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```sh
+const BASE_URL = 'http://127.0.0.1:8080'
 ```
 
-Locally preview production build:
+## Acknowledgments
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Shoutout to the Nuxt, TypeScript, Vuetify, Tailwind communities for their excellent tools and resources.

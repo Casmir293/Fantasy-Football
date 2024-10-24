@@ -1,31 +1,11 @@
 <script setup lang="ts">
-const items = [
-  {
-    name: "African Elephant",
-    team: "TB",
-    position: "QB",
-    salary: "$12,000",
-    points: "23",
-  },
-  {
-    name: "African Elephant",
-    team: "TB",
-    position: "QB",
-    salary: "$12,000",
-    points: "23",
-  },
-  {
-    name: "African Elephant",
-    team: "TB",
-    position: "QB",
-    salary: "$12,000",
-    points: "23",
-  },
-];
+const props = defineProps<{
+  players: Player[];
+}>();
 
 const headers = [
   {
-    key: "name",
+    key: "operatorPlayerName",
     title: "Name",
   },
   {
@@ -33,25 +13,25 @@ const headers = [
     title: "Team",
   },
   {
-    key: "position",
+    key: "operatorPosition",
     title: "Position",
   },
   {
-    key: "salary",
+    key: "operatorSalary",
     title: "Salary",
   },
   {
-    key: "points",
+    key: "fantasyPoints",
     title: "Points",
   },
 ];
 </script>
 
 <template>
-  <v-data-table :headers="headers" :items="items" theme="dark">
+  <v-data-table :headers="headers" :items="players" theme="dark" hover>
     <!-- Name -->
-    <template v-slot:item.name="{ item }">
-      <div>{{ item.name }}</div>
+    <template v-slot:item.operatorPlayerName="{ item }">
+      <div>{{ item.operatorPlayerName }}</div>
     </template>
 
     <!-- Team -->
@@ -60,18 +40,18 @@ const headers = [
     </template>
 
     <!-- Position -->
-    <template v-slot:item.position="{ item }">
-      <div>{{ item.position }}</div>
+    <template v-slot:item.operatorPosition="{ item }">
+      <div>{{ item.operatorPosition }}</div>
     </template>
 
     <!-- Salary -->
-    <template v-slot:item.salary="{ item }">
-      <div>{{ item.salary }}</div>
+    <template v-slot:item.operatorSalary="{ item }">
+      <div>{{ item.operatorSalary }}</div>
     </template>
 
     <!-- Points -->
-    <template v-slot:item.points="{ item }">
-      <div>{{ item.points }}</div>
+    <template v-slot:item.fantasyPoints="{ item }">
+      <div>{{ item.fantasyPoints || "-" }}</div>
     </template>
   </v-data-table>
 </template>
