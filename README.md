@@ -2,6 +2,8 @@
 
 This is a simple demonstration task with Nuxt, Vuetify, TypeScript, and Tailwind.
 
+VIDEO LINK: [Fantasy-Football](https://drive.google.com/file/d/1EseF_dJwWTYmP-DLcZpsJbZbeyA_D9IC/view?usp=drive_link).
+
 ## Project Setup
 
 - Clone the Repository:
