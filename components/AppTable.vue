@@ -1,8 +1,23 @@
 <script setup lang="ts">
+import { watch } from "vue";
+
 const props = defineProps<{
   players: Player[];
 }>();
 
+const selectedPlayer = useState<Player[]>("selectedPlayer", () => []);
+
+watch(
+  () => props.players,
+  (newPlayers) => {
+    if (newPlayers.length > 0 && selectedPlayer.value.length === 0) {
+      selectedPlayer.value = [newPlayers[0]];
+    }
+  },
+  { immediate: true },
+);
+
+// Table headers
 const headers = [
   {
     key: "operatorPlayerName",
@@ -28,7 +43,15 @@ const headers = [
 </script>
 
 <template>
-  <v-data-table :headers="headers" :items="players" theme="dark" hover>
+  <v-data-table
+    :headers="headers"
+    :items="players"
+    theme="dark"
+    select-strategy="single"
+    show-select
+    return-object
+    v-model="selectedPlayer"
+  >
     <!-- Name -->
     <template v-slot:item.operatorPlayerName="{ item }">
       <div>{{ item.operatorPlayerName }}</div>
