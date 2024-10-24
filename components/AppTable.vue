@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// const { operators, fetchOperators } = useFetchData();
+
 const items = [
   {
     name: "African Elephant",
