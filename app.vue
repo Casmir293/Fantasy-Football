@@ -13,7 +13,7 @@ const handlePlayersSelected = (players) => {
       <AppMenu @playersSelected="handlePlayersSelected" />
 
       <section
-        class="max-w-[1440px] items-start justify-between gap-7 p-5 pt-0 md:flex"
+        class="mx-auto max-w-[1440px] items-start justify-between gap-7 p-5 pt-0 md:flex"
       >
         <AppTable :players="selectedPlayers" />
         <ProfileCard />

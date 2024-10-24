@@ -3,30 +3,6 @@ const props = defineProps<{
   players: Player[];
 }>();
 
-const items = [
-  {
-    name: "African Elephant",
-    team: "TB",
-    position: "QB",
-    salary: "$12,000",
-    points: "23",
-  },
-  {
-    name: "African Elephant",
-    team: "TB",
-    position: "QB",
-    salary: "$12,000",
-    points: "23",
-  },
-  {
-    name: "African Elephant",
-    team: "TB",
-    position: "QB",
-    salary: "$12,000",
-    points: "23",
-  },
-];
-
 const headers = [
   {
     key: "operatorPlayerName",
@@ -52,7 +28,7 @@ const headers = [
 </script>
 
 <template>
-  <v-data-table :headers="headers" :items="players" theme="dark">
+  <v-data-table :headers="headers" :items="players" theme="dark" hover>
     <!-- Name -->
     <template v-slot:item.operatorPlayerName="{ item }">
       <div>{{ item.operatorPlayerName }}</div>
