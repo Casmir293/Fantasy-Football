@@ -51,6 +51,7 @@ const headers = [
     show-select
     return-object
     v-model="selectedPlayer"
+    show-current-page
   >
     <!-- Name -->
     <template v-slot:item.operatorPlayerName="{ item }">
@@ -78,3 +79,11 @@ const headers = [
     </template>
   </v-data-table>
 </template>
+
+<style scoped>
+::v-deep .v-data-table-footer {
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+</style>
