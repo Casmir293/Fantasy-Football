@@ -40,7 +40,7 @@ watch(selectedTestOperator, (newValue) => {
         </v-col>
         <v-col cols="12" md="4" sm="6">
           <v-select
-            :disabled="!operators.length > 0"
+            :disabled="!operators"
             v-model="selectedOperatorId"
             theme="dark"
             label="Select Game Type"
@@ -51,7 +51,7 @@ watch(selectedTestOperator, (newValue) => {
         </v-col>
         <v-col cols="12" md="4" sm="6">
           <v-select
-            :disabled="!selectedOperatorPlayers.length > 0"
+            :disabled="!selectedOperatorPlayers"
             theme="dark"
             label="Select Player"
             :items="selectedOperatorPlayers"
